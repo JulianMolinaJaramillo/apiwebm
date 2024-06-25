@@ -19,25 +19,25 @@ $maleta = $_POST["maleta"];
 
 //Validamos que las casillas esten llenas
 if ($genero == "") {
-    echo '<script language="javascript">alert("Falta seleccionar Género");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta seleccionar Género");window.location.href="formulario.php"</script>';
 }elseif ($cuerpo == "") {
-    echo '<script language="javascript">alert("Falta dato Cuerpo");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Cuerpo");window.location.href="formulario.php"</script>';
 }elseif ($cabeza == null) {
-    echo '<script language="javascript">alert("Falta dato Cabeza");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Cabeza");window.location.href="formulario.php"</script>';
 }elseif ($ceja == null) {
-    echo '<script language="javascript">alert("Falta dato Cejas");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Cejas");window.location.href="formulario.php"</script>';
 }elseif ($cabello == "") {
-    echo '<script language="javascript">alert("Falta dato Cabellos");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Cabellos");window.location.href="formulario.php"</script>';
 }elseif ($reloj == null) {
-    echo '<script language="javascript">alert("Falta dato Relojes");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Relojes");window.location.href="formulario.php"</script>';
 }elseif ($sombrero == "") {
-    echo '<script language="javascript">alert("Falta dato Sombrero");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Sombrero");window.location.href="formulario.php"</script>';
 }elseif ($zapato == "") {
-    echo '<script language="javascript">alert("Falta dato Zapatos");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Zapatos");window.location.href="formulario.php"</script>';
 }elseif ($ojos == "") {
-    echo '<script language="javascript">alert("Falta dato Ojos");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Ojos");window.location.href="formulario.php"</script>';
 }elseif ($maleta == "") {
-    echo '<script language="javascript">alert("Falta dato Maleta");window.location.href="index.php"</script>';
+    echo '<script language="javascript">alert("Falta dato Maleta");window.location.href="formulario.php"</script>';
 }else 
 {
     //Si todo se cumple Insertamos los valores obtenidos en la tabla
@@ -45,10 +45,10 @@ if ($genero == "") {
     //Ejecutamos el Query
     $query = mysqli_query($conect , $sql);
 
-    //Header, una vez se inserten los datos, redirecciona al usuario al index o a recargar archivo  
+    //Header, una vez se inserten los datos, redirecciona al usuario al formulario o a recargar archivo  
     if ($query) {
-    //Header("Location: index.php");
-    echo '<script language="javascript">alert("Personalización Exitosa");window.location.href="index.php"</script>';
+    //Header("Location: formulario.php");
+    echo '<script language="javascript">alert("Personalización Exitosa");window.location.href="formulario.php"</script>';
 }
 
 }
