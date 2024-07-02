@@ -27,7 +27,7 @@ $query = mysqli_query($conect , $sql);
 <body>
     <!-- Formulario de personalización -->
     <div class="users-form">
-        <form action="insert_producto.php" method ="POST">
+        <form action="insert_data.php" method ="POST">
             <h1> Tu Perfil De Personalización </h1>
             <label for="opciones">Género</label>
                 <select id="opciones" name="genero" multiple>
