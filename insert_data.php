@@ -48,7 +48,7 @@ if ($genero == "") {
     //Header, una vez se inserten los datos, redirecciona al usuario al formulario o a recargar archivo  
     if ($query) {
     //Header("Location: formulario.php");
-    echo '<script language="javascript">alert("Personalización Exitosa");window.location.href="formulario.php"</script>';
+    //echo '<script language="javascript">alert("Personalización Exitosa");window.location.href="formulario.php"</script>';
 }
 
 }

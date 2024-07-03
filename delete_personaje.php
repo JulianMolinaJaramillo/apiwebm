@@ -12,7 +12,7 @@ $query = mysqli_query($conect , $sql);
 
 if ($query) {
     //Header("Location: index.php");
-    echo '<script language="javascript">alert("Personaje Eliminado Con Exito");window.location.href="index.php"</script>';
+    //echo '<script language="javascript">alert("Personaje Eliminado Con Exito");window.location.href="index.php"</script>';
 }
 
 ?>
