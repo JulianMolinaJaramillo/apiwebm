@@ -8,7 +8,6 @@ include('header.html');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambiente Virtual</title>
-    <link rel="stylesheet" href="CSS/style5.css">
 </head>
 <body>
     <section class="hero">
@@ -20,25 +19,25 @@ include('header.html');
 
     <section class="services">
         <div class="service">
-            <img src="imagenes/personalizacion.png">
+            <img src="../imagenes/personalizacion.png">
             <h2>Personalización</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="#">Read more...</a>
         </div>
         <div class="service">
-            <img src="imagenes/tiempo.png">
+            <img src="../imagenes/tiempo.png">
             <h2>Tiempo De Conexión</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="#">Read more...</a>
         </div>
         <div class="service">
-            <img src="imagenes/conexiones.png">
+            <img src="../imagenes/conexiones.png">
             <h2>Conexiones</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="#">Read more...</a>
         </div>
         <div class="service">
-            <img src="imagenes/puntaje.png">
+            <img src="../imagenes/puntaje.png">
             <h2>Puntaje</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a href="#">Read more...</a>
@@ -47,7 +46,7 @@ include('header.html');
 
     <section class="gallery">
         <div class="gallery-item">
-            <img src="imagenes/cis.png">
+            <img src="../imagenes/cis.png">
             <div class="gallery-info">
                 <h3>Laboratorio CIS</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -55,15 +54,15 @@ include('header.html');
             </div>
         </div>
         <div class="gallery-item">
-            <img src="imagenes/grupos.png">
+            <img src="../imagenes/grupos.png">
             <div class="gallery-info">
                 <h3>Grupos</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">Read more...</a>
+                <a href="../Grupos/index.php">Ingresar</a>
             </div>
         </div>
         <div class="gallery-item">
-            <img src="imagenes/laboratorios.png">
+            <img src="../imagenes/laboratorios.png">
             <div class="gallery-info">
                 <h3>Laboratorios</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

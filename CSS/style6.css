@@ -6,8 +6,9 @@ body {
 }
 
 header {
-    background-color: #29b2c2;
+    background-color: #038492;
     padding: 10px 0;
+    margin-bottom: 5px;
 }
 
 nav ul {
@@ -49,6 +50,7 @@ img{
     display: flex; /* Utilizamos flexbox para organizar el contenido */
     justify-content: space-between; /* Distribuye los elementos de manera uniforme */
     align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 10px;
 }
 .left-section {
     flex: 1; /* Ocupa el espacio disponible */
@@ -63,6 +65,7 @@ img{
     background: #102f49;
     text-align: center;
     padding: 50px 0;
+    border-radius: 105px;
 }
 
 .hero-content {
@@ -119,12 +122,10 @@ img{
 
 .gallery-item {
     display: flex;
-    padding: 10px;
     margin: 10px;
     margin-bottom: 40px;
     background: #96eff0;
     border-radius: 15px;
-    
 }
 
 .gallery-item img {
