@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupos</title>
-    <link rel="stylesheet" href="../CSS/style_grupos.css">
+    <link rel="stylesheet" href="../CSS/style_gr.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>

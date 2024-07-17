@@ -82,14 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             // Validamos si es Docente o Estudiante para saber a donde redireccionar
             if ($respuesta['Datos']['TipoDeUsuario'] == 'Docente') 
             {
-                header("location:../Index/index.php");
+                header("location:../index/index.php");
             }
             elseif ($respuesta['Datos']['TipoDeUsuario'] == 'Estudiante') 
             {
-                header("location:../Index/index.php");
+                header("location:../index/index.php");
             }
             // Si la respuesta es correcta enviamos al usuario al principal.php
-            header("location:../Index/index.php");
+            header("location:../index/index.php");
         } 
         else 
         {  

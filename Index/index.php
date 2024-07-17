@@ -58,7 +58,7 @@ include('header.html');
             <div class="gallery-info">
                 <h3>Grupos</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="../Grupos/index.php">Ingresar</a>
+                <a href="../grupos/index.php">Ingresar</a>
             </div>
         </div>
         <div class="gallery-item">
@@ -66,7 +66,7 @@ include('header.html');
             <div class="gallery-info">
                 <h3>Laboratorios</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <a href="#">Read more...</a>
+                <a href="../laboratorios/index.php">Ingresar</a>
             </div>
         </div>
     </section>
