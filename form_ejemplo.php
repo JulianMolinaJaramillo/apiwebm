@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $array = $decoded['data'];
 
-    // Muestra los datos en un formulario HTML con estilo
+    // Muestra los datos en un formulario HTML
     echo "<!DOCTYPE html>";
     echo "<html lang='en'>";
     echo "<head>";
