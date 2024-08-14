@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, #a7d1e9, #36acac); /* Define el gradiente de color */
+    -webkit-background-clip: text; /* Recorta el fondo al contorno del texto (necesario para Safari y Chrome) */
+    -webkit-text-fill-color: transparent; 
+}
+
+h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 60px;
+    background-image: linear-gradient(to right, #3a8dbd, #0f0e0d); /* Define el gradiente de color */
+    -webkit-background-clip: text; /* Recorta el fondo al contorno del texto (necesario para Safari y Chrome) */
+    -webkit-text-fill-color: transparent; 
+}
+
+.imagenes {
+    background: linear-gradient(to bottom, #11b5df, #1a1919);
+    padding: 50px 20px;
+    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho de la pantalla */
+    height: 84vh; /* Hace que el contenedor ocupe el 100% de la altura de la pantalla */
+}
+
+.imagenes-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.imagen {
+    
+    position: relative;
+    width: 300px; /* Ajusta según el tamaño de tu imagen */
+    height: 300px; /* Ajusta según el tamaño de tu imagen */
+    background-color: #07060600;
+}
+
+.imagen img {
+    width: 420px; /* Ajusta según el tamaño de tu imagen */
+    height: 570px; /* Ajusta según el tamaño de tu imagen */
+    display: block;
+}
+
+.tabla-container {
+    position: absolute;
+    padding-top: 150px;
+    margin-left: 10px;
+    width: 130%;
+    height: 150%;
+    display: flex;
+    justify-content: center;
+}
+
+.tabla-container2 {
+    position: absolute;
+    padding-top: 200px;
+    margin-left: 10px;
+    width: 130%;
+    height: 150%;
+    display: flex;
+    justify-content: center;
+}
+
+.tabla-container iframe {
+    width: 90%;
+    height: 100%;
+    border: none;
+}
+
+.tabla-container2 iframe {
+    width: 90%;
+    height: 100%;
+    border: none;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #102f49;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho de la pantalla */
+}
+.footer button {
+    background-color: #fff;
+    color: #181717;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer button:hover {
+    background-color: #96eff0;
+    color: #fff;
+}
+
+
+

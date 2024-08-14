@@ -34,7 +34,7 @@
             </div>
         </main>
         <section class="footer">
-            <button onclick="window.location.href='../login/login.php';">Regresar</button>
+            <button onclick="window.location.href='../login/index_login.php';">Regresar</button>
         </section>
     </div>
     <script>

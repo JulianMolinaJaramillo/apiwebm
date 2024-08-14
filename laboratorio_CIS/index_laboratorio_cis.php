@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/style_laboratorio_cis.css">
 </head>
 <body>
-    <!-- Sección de Testimonios -->
+    <!-- Sección 1 -->
     <section class="laboratorios">
         <h2>Laboratorio CIS</h2>
         <div class="laboratorios-container">
@@ -23,7 +23,7 @@
             </div>
         </div>
     </section>
-    <!-- Sección de Servicios -->
+    <!-- Sección 2 -->
     <section class="imagenes">
         <h2>Laboratorios</h2>
         <div class="imagenes-container">
@@ -39,7 +39,7 @@
         </div>
     </section>
     <section class="footer">
-        <button onclick="window.location.href='../login/login.php';">Regresar</button>
+        <button onclick="window.location.href='../login/index_login.php';">Regresar</button>
     </section>
 </body>
 </html>

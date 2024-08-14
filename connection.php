@@ -1,21 +1,16 @@
 <?php
 
-function connection(){
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ambientes_virtuales";
 
-    //creamos variables para la conexion con la base de satos
-    $host = "localhost";
-    $user = "root";
-    $password = "";
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    $bd = "ambientes_virtuales";
-
-    //Generamos la conexion
-    $connect = mysqli_connect($host,$user,$password );
-
-    //Seleccionamos la base de datos y conexion
-    mysqli_select_db($connect,$bd);
-
-    return $connect;  
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
 ?>
