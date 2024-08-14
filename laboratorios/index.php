@@ -37,7 +37,11 @@
             </div>
         </div>
         <section class="footer">
+<<<<<<< HEAD
             <button onclick="window.location.href='../login/login.php';">Regresar</button>
+=======
+            <button onclick="window.location.href='../Index/index.php';">Regresar</button>
+>>>>>>> 964246a8ed6904d14d752dacf8606d04f946b13a
         </section>
     </div>
     
