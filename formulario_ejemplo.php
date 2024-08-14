@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
 </head>
 <body>
-    <form action="formulario.php" method="POST">
+    <form action="formulario_ejemplo.php" method="POST">
         <input type="text" name="pos1">
         <input type="text" name="pos2">
         <input type="text" name="pos3">
@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             for ($i = 1; $i <= 9; $i++) {
-                if (isset($_POST["pos$i"])) {
-                    echo "<p>Posición $i: " . htmlspecialchars($_POST["pos$i"]) . "</p>";
+                if (isset($datos["pos$i"])) {
+                    echo "<p>Posición $i: " . htmlspecialchars($datos["pos$i"]) . "</p>";
                 } else {
                     echo "<p>Posición $i: no recibida</p>";
                 }

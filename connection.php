@@ -7,7 +7,7 @@ function connection(){
     $user = "root";
     $password = "";
 
-    $bd = "api_web";
+    $bd = "ambientes_virtuales";
 
     //Generamos la conexion
     $connect = mysqli_connect($host,$user,$password );

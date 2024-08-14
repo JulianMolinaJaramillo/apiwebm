@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: linear-gradient(90deg, rgba(233, 233, 233, 1) 0%, #038492);
 }
 
 header {
@@ -82,7 +83,6 @@ img{
     display: flex;
     justify-content: space-around;
     padding: 5px;
-    background: #c0c0c0;
 }
 
 .service {
@@ -115,15 +115,16 @@ img{
 }
 
 .gallery { 
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
-    background: #c0c0c0;
+    background: linear-gradient(90deg, rgba(233, 233, 233, 1) 0%, #02393f);
 }
 
 .gallery-item {
+    
     display: flex;
     margin: 10px;
-    margin-bottom: 40px;
     background: #96eff0;
     border-radius: 15px;
 }
@@ -155,3 +156,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
