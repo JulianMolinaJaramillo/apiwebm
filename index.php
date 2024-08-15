@@ -1,5 +1,5 @@
 <?php
-session_start(); // Inicia la sesión para almacenar mensajes temporales
+session_start(); // Iniciar la sesión
 
 // Verificar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         // Si la respuesta de la API es éxitosa
         if ($respuesta['Success']) 
         {
+            $_SESSION['loggedin'] = true; // <- Establece que el usuario está logueado
             // Almacenar cada dato en una variable de sesión independiente
             $_SESSION['Identificacion'] = $respuesta['Datos']['Identificacion'];
             $_SESSION['NombreCompleto'] = $respuesta['Datos']['NombreCompleto'];

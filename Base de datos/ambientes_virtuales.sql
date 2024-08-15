@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2024 a las 23:10:11
+-- Tiempo de generación: 15-08-2024 a las 23:49:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -124,15 +124,8 @@ CREATE TABLE `personalizacion` (
 --
 
 INSERT INTO `personalizacion` (`id_personalizacion`, `id_usuario`, `genero`, `maleta`, `cuerpo`, `cabeza`, `cejas`, `cabello`, `reloj`, `sombrero`, `zapatos`, `tamano`, `color1`, `color2`, `color3`, `color4`, `color5`, `carroceria`, `aleron`, `silla`, `volante`, `llanta`, `bateria`) VALUES
-(4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5),
-(9, 2, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6),
-(24, 0, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9),
-(26, 1, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9),
-(28, 1, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9),
-(29, 1, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9),
-(30, 0, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9),
-(32, 0, 5, 1, 2, 3, 4, 6, 7, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9);
+(53, 1152687834, 1, 1, 4, 1, 2, 9, 2, 0, 10, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(54, 1033256382, 0, 1, 13, 3, 3, 0, 2, 0, 10, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -154,9 +147,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `personalizacion`, `tiempo_uso`, `num_conexiones`, `genero`, `tipo_usuario`) VALUES
-(0, 'asas', 50, 1, 1, 1),
-(1, 'ssss', 50, 1, 1, 1),
-(2, 'hola', 50, 1, 1, 1);
+(1033256382, 'personalizacion', 0, 0, 0, 2),
+(1152687834, 'personalizacion', 0, 0, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -249,7 +241,7 @@ ALTER TABLE `matriculados`
 -- AUTO_INCREMENT de la tabla `personalizacion`
 --
 ALTER TABLE `personalizacion`
-  MODIFY `id_personalizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_personalizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Restricciones para tablas volcadas

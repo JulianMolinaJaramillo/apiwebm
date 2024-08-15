@@ -1,5 +1,8 @@
 <?php
+// Incluimos el archivo que inicia la sesion
+include('../iniciar_sesion.php');
 include('header.html');
+
 ?>
 
 <!DOCTYPE html>

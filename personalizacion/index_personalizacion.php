@@ -1,3 +1,8 @@
+<?php
+// Incluimos el archivo que inicia la sesion
+include('../iniciar_sesion.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
