@@ -1,5 +1,6 @@
 <?php
 // Incluir el archivo de conexión a la base de datos
+
 include('../../connection.php');
 
 // Comprobar si se ha hecho una solicitud POST
