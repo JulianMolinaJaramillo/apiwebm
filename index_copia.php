@@ -75,10 +75,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             // Redirigir a la página deseada
             //header("location:login/index_login.php");
             // Redirigir con JavaScript
-            echo '<script>
-                    window.location.href = "login/index_login.php";
-                  </script>';
-            exit();
+            $origen = $_POST['origen'];
+            if ($origen == "web") {
+                echo '<script>
+                        window.location.href = "login/index_login.php";
+                    </script>';
+                exit();
+            }
+            
         } 
         else 
         {
@@ -96,73 +100,76 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         header("Location:index.php"); // Redirige al usuario de vuelta a la página
         exit();
     }
-} 
+} else {
+    // Recuperar mensaje de error y datos del usuario, si existen
+    $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+    $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
-// Recuperar mensaje de error y datos del usuario, si existen
-$error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
-$email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+    // Limpiar la sesión
+    unset($_SESSION['error']);
+    unset($_SESSION['email']);
+    ?>
 
-// Limpiar la sesión
-unset($_SESSION['error']);
-unset($_SESSION['email']);
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="CSS/style_index.css">
-    <style>
-        body {
-            background-image: url('imagenes/fondo.jpg');
-            background-size: cover;
-            height: 100vh;
-        }
-        .error-message {
-            color: red;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <div class="avatar">
-                <img src="imagenes/profile.png" alt="Avatar">
-            </div>
-            <h1>Iniciar</h1>
-            <?php if (!empty($error)): ?>
-                <div class="error-message">
-                    <?= htmlspecialchars($error) ?>
-                </div>
-            <?php endif; ?>
-            <form action="index.php" method="POST">
-                <div class="textbox">
-                    <input type="text" style="width: 100px;" placeholder="Usuario" name="email" value="<?= htmlspecialchars($email) ?>" required>
-                    <span>@pascualbravo.edu.co</span>
-                </div>
-                <div class="textbox">
-                    <input type="password" placeholder="Contraseña" name="contrasena" required>
-                    <button type="button" onclick="togglePasswordVisibility()">👁️</button>
-                </div>
-                <input type="submit" class="btn" value="Ingresar">
-                <br><br>
-                <a href="#">¿Olvidaste tu usuario o contraseña?</a>
-            </form>
-        </div>
-    </div>
-    <script>
-        function togglePasswordVisibility() {
-            var passwordInput = document.querySelector('input[name="contrasena"]');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio de Sesión</title>
+        <link rel="stylesheet" href="CSS/style_index.css">
+        <style>
+            body {
+                background-image: url('imagenes/fondo.jpg');
+                background-size: cover;
+                height: 100vh;
             }
-        }
-    </script>
-</body>
-</html>
+            .error-message {
+                color: red;
+                font-weight: bold;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="login-box">
+                <div class="avatar">
+                    <img src="imagenes/profile.png" alt="Avatar">
+                </div>
+                <h1>Iniciar</h1>
+                <?php if (!empty($error)): ?>
+                    <div class="error-message">
+                        <?= htmlspecialchars($error) ?>
+                    </div>
+                <?php endif; ?>
+                <form action="index.php" method="POST">
+                    <div class="textbox">
+                        <input type="text" style="width: 100px;" placeholder="Usuario" name="email" value="<?= htmlspecialchars($email) ?>" required>
+                        <span>@pascualbravo.edu.co</span>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Contraseña" name="contrasena" required>
+                        <button type="button" onclick="togglePasswordVisibility()">👁️</button>
+                    </div>
+                    <input type="hidden" name="origen" value="web">
+                    <input type="submit" class="btn" value="Ingresar">
+                    <br><br>
+                    <a href="#">¿Olvidaste tu usuario o contraseña?</a>
+                </form>
+            </div>
+        </div>
+        <script>
+            function togglePasswordVisibility() {
+                var passwordInput = document.querySelector('input[name="contrasena"]');
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+            }
+        </script>
+    </body>
+    </html>
+    <?php
+    }
+    ?>

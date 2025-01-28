@@ -2,21 +2,39 @@
 // Ejecutar la consulta, dependiendo de que lectura se realice en el archivo que incluya este documento
 $result = $conn->query($sql);
 
-// Obtener los nombres de las columnas
-$columns = array();
+// Verificar si hay resultados
 if ($result->num_rows > 0) {
-    // Obtener la primera fila para usar los nombres de columna
-    $row = $result->fetch_assoc();
-    $columns = array_keys($row);
+    // Obtener el valor de la columna 'personalizacion'
+    $row = $result->fetch_assoc(); // Extraemos las filas de la consulta y las devolvemos en array
+    $personalizacion = $row['personalizacion'];
+
+    // Dividir la cadena de personalización en un array
+    $datos_personalizacion = explode('|', $personalizacion);
+
+    // La variable $id_datos se encuentra en cada uno de los archivos  leer_datos_personaje, leer_datos_furtivo y leer_datos_color
+    if ($id_datos == "personaje") 
+    {
+        // Obtener los primeros 10 datos
+        $datos_a_leer = array_slice($datos_personalizacion, 0, 10);
+    }
+    elseif ($id_datos == "color") 
+    {
+        // Obtener los primeros 5 datos desde la posicion 10 del array
+        $datos_a_leer = array_slice($datos_personalizacion, 10, 5);
+    }
+    elseif ($id_datos == "furtivo") 
+    {
+        // Obtener los primeros 6 datos desde la posicion 15 del array
+        $datos_a_leer = array_slice($datos_personalizacion, 15, 6);
+    }
+    
+} 
+else 
+{
+    // Sino se encuentra ningun datos, dejamos el array vacio
+    $datos_a_leer = [];
 }
 
-// Volver a posicionar el puntero del resultado al inicio
-$result->data_seek(0);
-
-$rows = array();
-while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
-}
 
 $conn->close();
 ?>
@@ -53,15 +71,30 @@ $conn->close();
 </head>
 <body>
     <table>
+        <thead>
+            <tr>
+                <th>Dato</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
         <tbody>
             <?php
-            foreach ($columns as $column) {
-                echo '<tr>';
-                echo '<td>' . $column . '</td>';
-                foreach ($rows as $row) {
-                    echo '<td>' . $row[$column] . '</td>';
+            if (!empty($datos_a_leer)) {
+                foreach ($datos_a_leer as $index => $dato) 
+                {     
+                    //  El índice del array se utiliza para asegurarse de que los nombres y los datos se alineen correctamente en las filas.
+                    // La variable $nombre_columna  se encuentra en cada uno de los archivos  leer_datos_personaje, leer_datos_furtivo y leer_datos_color
+                    $nombre_columna = isset($nombre_columnas[$index]) ? $nombre_columnas[$index] : "Sin nombre";  // Verificar si existe el nombre de columna correspondiente en el array
+
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($nombre_columna) . '</td>'; // Mostrar el nombre de la columna
+                    echo '<td>' . htmlspecialchars($dato) . '</td>'; // Mostrar el dato
+                    echo '</tr>';
                 }
-                echo '</tr>';
+            } 
+            else 
+            {
+                echo '<tr><td>No se encontraron datos.</td></tr>';
             }
             ?>
         </tbody>

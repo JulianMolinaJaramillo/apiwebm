@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-08-2024 a las 23:49:45
+-- Tiempo de generación: 05-09-2024 a las 20:32:48
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -90,46 +90,6 @@ CREATE TABLE `matriculados` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `personalizacion`
---
-
-CREATE TABLE `personalizacion` (
-  `id_personalizacion` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `genero` int(11) NOT NULL,
-  `maleta` int(11) NOT NULL,
-  `cuerpo` int(11) NOT NULL,
-  `cabeza` int(11) NOT NULL,
-  `cejas` int(11) NOT NULL,
-  `cabello` int(11) NOT NULL,
-  `reloj` int(11) NOT NULL,
-  `sombrero` int(11) NOT NULL,
-  `zapatos` int(11) NOT NULL,
-  `tamano` int(11) NOT NULL,
-  `color1` int(11) NOT NULL,
-  `color2` int(11) NOT NULL,
-  `color3` int(11) NOT NULL,
-  `color4` int(11) NOT NULL,
-  `color5` int(11) NOT NULL,
-  `carroceria` int(11) NOT NULL,
-  `aleron` int(11) NOT NULL,
-  `silla` int(11) NOT NULL,
-  `volante` int(11) NOT NULL,
-  `llanta` int(11) NOT NULL,
-  `bateria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `personalizacion`
---
-
-INSERT INTO `personalizacion` (`id_personalizacion`, `id_usuario`, `genero`, `maleta`, `cuerpo`, `cabeza`, `cejas`, `cabello`, `reloj`, `sombrero`, `zapatos`, `tamano`, `color1`, `color2`, `color3`, `color4`, `color5`, `carroceria`, `aleron`, `silla`, `volante`, `llanta`, `bateria`) VALUES
-(53, 1152687834, 1, 1, 4, 1, 2, 9, 2, 0, 10, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(54, 1033256382, 0, 1, 13, 3, 3, 0, 2, 0, 10, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -147,8 +107,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `personalizacion`, `tiempo_uso`, `num_conexiones`, `genero`, `tipo_usuario`) VALUES
-(1033256382, 'personalizacion', 0, 0, 0, 2),
-(1152687834, 'personalizacion', 0, 0, 0, 0);
+(1033256382, '0|1|13|3|3|2|2|0|10|80|6|6|9|7|8|0|0|0|0|0|0', 0, 0, 0, 2),
+(1152687834, '1|1|8|2|3|5|1|1|4|100|1|2|2|2|9|0|0|0|0|0|0', 0, 0, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -191,13 +151,6 @@ ALTER TABLE `matriculados`
   ADD KEY `id_grupo` (`id_grupo`);
 
 --
--- Indices de la tabla `personalizacion`
---
-ALTER TABLE `personalizacion`
-  ADD PRIMARY KEY (`id_personalizacion`),
-  ADD KEY `id_usuario` (`id_usuario`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -238,12 +191,6 @@ ALTER TABLE `matriculados`
   MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `personalizacion`
---
-ALTER TABLE `personalizacion`
-  MODIFY `id_personalizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -272,12 +219,6 @@ ALTER TABLE `lab_cis`
 ALTER TABLE `matriculados`
   ADD CONSTRAINT `matriculados_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `matriculados_ibfk_2` FOREIGN KEY (`id_grupo`) REFERENCES `grupos` (`id_grupo`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `personalizacion`
---
-ALTER TABLE `personalizacion`
-  ADD CONSTRAINT `personalizacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

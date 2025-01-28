@@ -14,7 +14,13 @@ if (!isset($_SESSION['Identificacion'])) {
 $id_usuario = $_SESSION['Identificacion'];
 
 // Consulta SQL para obtener todos los datos de la tabla 'personalizacion'
-$sql = "SELECT genero, maleta, cuerpo, cabeza, cejas, cabello, reloj, sombrero, zapatos, tamano FROM personalizacion WHERE id_usuario = '$id_usuario'";
+$sql = "SELECT personalizacion FROM usuarios WHERE id_usuario = '$id_usuario'";
+
+// Para identificar en el archivo leer.php la cantidad de datos a mostrar
+$id_datos = "personaje";
+
+// Para identificar en el archivo leer.php los datos a mostrar
+$nombre_columnas = ["Género", "Maleta", "Cuerpo", "Cabeza", "Cejas", "Cabello", "Reloj", "Sombrero", "Zapatos", "Tamaño"];
 
 // Incluimos el archivo para la lectura de la consulta 
 include('leer.php');
