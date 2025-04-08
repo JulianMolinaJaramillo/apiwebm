@@ -20,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_usuario = intval($_POST['id_usuario']);
     $personalizacion = $_POST['personalizacion'];
 
+    // Convertir el string de personalización para que cada carácter esté separado por |
+    $personalizacion = implode('|', str_split($personalizacion));
+
     // Verificar si el id_usuario existe en la tabla usuarios
     $sql_check_usuario = "SELECT id_usuario FROM usuarios WHERE id_usuario = ?";
     $stmt_check_usuario = $conn->prepare($sql_check_usuario);

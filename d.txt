@@ -1,0 +1,1 @@
+ALTER TABLE `lab_cis` ADD `turno1` INT NOT NULL AFTER `turnos_sin_atender`, ADD `fecha1` DATE NOT NULL AFTER `turno1`, ADD `turnospendientes1` VARCHAR(255) NOT NULL AFTER `fecha1`;

@@ -6,7 +6,7 @@ include('../../connection.php');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') 
 {
     // Preparar la consulta para obtener el campo furtivos
-    $sql_select = "SELECT furtivos FROM lad_taller ORDER BY id DESC LIMIT 1";
+    $sql_select = "SELECT furtivos FROM lab_taller ORDER BY id DESC LIMIT 1";
     $result = $conn->query($sql_select);
 
     // Verificar si hay resultados

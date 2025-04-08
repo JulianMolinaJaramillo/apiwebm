@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $furtivos = $_POST['furtivos'];
 
     // Preparar la consulta para insertar el campo furtivos en la tabla lab_taller
-    $sql_insert = "INSERT INTO lad_taller (furtivos) VALUES (?)";
+    $sql_insert = "INSERT INTO lab_taller (furtivos) VALUES (?)";
     $stmt_insert = $conn->prepare($sql_insert);
 
     if ($stmt_insert) 

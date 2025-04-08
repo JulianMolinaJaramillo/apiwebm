@@ -36,22 +36,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $personalizacion = $_POST['personalizacion'];
         $tiempo_uso = intval($_POST['tiempo_uso']);
         $num_conexiones = intval($_POST['num_conexiones']);
-        $genero = intval($_POST['genero']);
+        $nombre = intval($_POST['nombre']);
         $tipo_usuario = intval($_POST['tipo_usuario']);
+        $programa = intval($_POST['programa']);
+        $facultad = intval($_POST['facultad']);
 
         // Asegúrate de que la cantidad de signos ? coincida con el número de columnas en la tabla e insertamos en la tabla Usuarios
-        $sql_insert = "INSERT INTO usuarios (id_usuario, personalizacion, tiempo_uso, num_conexiones, genero, tipo_usuario) VALUES (?,?,?,?,?,?)";
+        $sql_insert = "INSERT INTO usuarios (id_usuario, personalizacion, tiempo_uso, num_conexiones, nombre, tipo_usuario,programa,facultad) VALUES (?,?,?,?,?,?,?,?)";
         $stmt_insert = $conn->prepare($sql_insert); // Preparar la consulta/sentencia de inserción
 
         // Si la consulta/sentencia de inserción se preparó correctamente
         if ($stmt_insert) 
         {
             // Asociar los parámetros a la consulta/sentencia preparada e indicamos que cada parametro asociado a la consulta es entero = i o string = s
-            $stmt_insert->bind_param("isiiii", $id_usuario, $personalizacion, $tiempo_uso, $num_conexiones, $genero, $tipo_usuario);
+            $stmt_insert->bind_param("isiisiss", $id_usuario, $personalizacion, $tiempo_uso, $num_conexiones, $nombre, $tipo_usuario, $programa, $facultad);
                     
             // Ejecutar la consulta/sentencia de inserción
             if ($stmt_insert->execute()) {
-                echo "Usuario creado con exito"; // Mensaje de éxito
+                $id_usuario = intval($_POST['id_usuario']);
+
+                // Verificar si el id_usuario existe en la tabla usuarios
+                $sql_check = "SELECT id_usuario FROM usuarios WHERE id_usuario = ?";
+                $stmt_check = $conn->prepare($sql_check); // Preparamos la consulta
+                $stmt_check->bind_param("i", $id_usuario); // Asociar el parámetro $id_usuario a la consulta/sentencia preparada
+                $stmt_check->execute(); // Ejecutar la consulta/sentencia preparada 
+                $stmt_check->store_result(); // Almacenar el resultado de la consulta/sentencia
+                
             } 
             else 
             {
